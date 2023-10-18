@@ -1,0 +1,152 @@
+/* UniversalSearch.module.css */
+
+.universal-search {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.universal-search input[type='text'] {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+/* Prompts container */
+.universal-search .prompts {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Set the desired width as a percentage for smaller screens */
+  max-width: 600px; /* Set a maximum width for larger screens */
+  height: 400px;
+  background-color: #00cffd;
+  opacity: 0.9;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 100000;
+}
+
+.universal-search.expanded .prompts.visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.universal-search .prompts div:hover {
+  background-color: #e0e0e0;
+}
+
+.universal-search .chat-message-left,
+.universal-search .chat-message-right {
+  ]max-width: 80%;
+}
+
+.universal-search .chat-message-left {
+  background-color: grey; /* User message background color */
+  color: black; /* User message text color */
+  text-align: left;
+  align-self: flex-start;
+  padding: 10px;
+  border-radius: 0 25px 25px 25px; /* Rounded left border */
+  margin: 5px 10px;
+  max-width: 80%; /* Set a maximum width for the chat message */
+  width: auto; /* Allow the container to adjust to content width */
+  height: auto;
+  position: relative;
+}
+
+.universal-search .chat-message-right {
+  background-color: #e0e0e0; /* Bot message background color */
+  color: #000; /* Bot message text color */
+  text-align: right;
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 25px 25px 0 25px; /* Rounded right border */
+  margin: 5px 10px;
+  float: right;
+  width: auto; /* Allow the container to adjust to content width */
+  height: auto;
+  position: relative;
+}
+.universal-search .predefinedPrompt {
+  background-color: #e0e0e0; /* Bot message background color */
+  color: #000; /* Bot message text color */
+  text-align: right;
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 25px 25px 0 25px; /* Rounded right border */
+  margin: 5px 10px;
+  float: right;
+  width: auto; /* Allow the container to adjust to content width */
+  height: auto;
+  position: relative;
+}
+
+/* ... (existing styles) */
+
+.universal-search.expanded .prompts {
+  display: flex;
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the box */
+}
+
+.universal-search .botHeader {
+  display: flex; /* Display children in a row */
+  align-items: center; /* Vertically align children */
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Style the robot icon */
+.universal-search .botHeader .robotIcon {
+  margin: 10px; /* Add some space to separate the icon from text */
+}
+
+/* Loading dots */
+.universal-search .loading-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Adjust the spacing between dots */
+}
+
+.universal-search .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #00cffd; /* Color of the loading dots */
+  border-radius: 50%; /* Make them circular */
+  animation: dot-animation 1.5s infinite; /* Define the animation */
+}
+
+/* Keyframes for the typing animation */
+@keyframes dot-animation {
+  0%,
+  60%,
+  100% {
+    transform: scale(0); /* Start and end with small dots */
+  }
+  30% {
+    transform: scale(1); /* Middle stage, bigger dot */
+  }
+}
+
+@media (min-width: 768px) {
+  .universal-search .prompts {
+    width: 600px; /* Set a specific width for desktop screens */
+  }
+}
