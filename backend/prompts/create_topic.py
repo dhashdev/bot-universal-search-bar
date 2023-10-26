@@ -1,4 +1,4 @@
-create_topic_system_prompt = "You are an AI assistant to be helpful, harmless and honest."
+create_topic_system_prompt = "You are an AI assistant created by Tackle Company to be helpful, harmless and honest."
 
 create_topic_human_prompt = """Please create a concise topic (less than 5 words) best suited for the following conversation.
 Conversation:

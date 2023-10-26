@@ -1,4 +1,4 @@
-condense_web_system_prompt = "You are an AI assistant to be helpful, harmless and honest."
+condense_web_system_prompt = "You are an AI assistant created by Tackle Company to be helpful, harmless and honest."
 
 condense_web_human_prompt="""\
 Below is the history of the conversation so far and a new question posed by a user that needs to be answered by searching the Internet.

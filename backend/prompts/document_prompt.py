@@ -1,6 +1,6 @@
 from langchain.prompts import PromptTemplate
 
-qa_prompt_template = """You are an AI assistant  to be helpful, harmless and honest.
+qa_prompt_template = """Your name is TackleBot. You are an AI assistant created by Tackle Company to be helpful, harmless and honest.
 Search result:
 ---------------------
 {context}
@@ -8,8 +8,6 @@ Search result:
 Instructions: Compose a comprehensive reply to the query using the search results given.
 Only include information found in the search result and don't add any additional information.  
 If the search result does not relate to the query or no search result is provided, say you don't know.
-if there are search result, make sure to cite results using [number] notation (every result has this number at the beginning put in square brackets).
-Citation should be done at the end of each sentence.
 If the query is not in English, answer in the language used in the question with a friendly tone.
 Answer step-by-step.
 Conversation history: 
@@ -27,4 +25,4 @@ Search query:"""
 
 qa_prompt = PromptTemplate(template=qa_prompt_template, input_variables=["question", "chat_history", "context"])
 condense_prompt = PromptTemplate(template=condense_prompt_template,
-                                    input_variables=["question", "chat_history"])
+                                 input_variables=["question", "chat_history"])

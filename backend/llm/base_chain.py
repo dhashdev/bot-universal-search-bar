@@ -1,17 +1,14 @@
 from langchain import LLMChain
 
-from backend.config.settings import settings
-from langchain.chat_models import AzureChatOpenAI
+from config.settings import settings
+from langchain.chat_models import AzureChatOpenAI, ChatOpenAI
 from langchain.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 
 
 class BaseChain:
     def __init__(self, system_prompt_template: str = "", human_prompt_template: str = "", temperature: float = 0., **model_kwargs):
-        self.llm = AzureChatOpenAI(
-            deployment_name=settings.openai.AZURE_DEPLOYMENT_NAME,
+        self.llm = ChatOpenAI(
             openai_api_key=settings.openai.API_KEY,
-            openai_api_base=settings.openai.OPENAI_API_BASE,
-            openai_api_version=settings.openai.OPENAI_API_VERSION,
             temperature=temperature,
             **model_kwargs
         )

@@ -1,2 +1,15 @@
-fastapi
-uvicorn
+fastapi==0.100.0
+pydantic==1.10.2
+uvicorn==0.22.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
+openai>=0.27.8
+PyYAML==6.0.1
+langchain==0.0.284
+PyPDF2==3.0.1
+azure.cosmos==4.4.0
+pinecone-client==2.2.1
+tiktoken
+google-api-python-client==2.88.0
+typing-inspect==0.8.0
+typing_extensions==4.5.0

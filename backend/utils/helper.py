@@ -1,9 +1,9 @@
 from typing import List, Tuple
 
-def process_history(history: List[Tuple[str, str]]) -> str:
+def process_history(history) -> str:
     history_template = ""
     for (input, output) in history:
-        history_template += f"User {input}\n" + f"Assistant: {output}\n"
+        history_template += f"User: {input}\n" + f"Assistant: {output}\n"
     return history_template
 
 def add_source_numbers(lst, source_name="Source", use_source=True):
