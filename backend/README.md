@@ -1,9 +1,11 @@
 # TackleBot
+Access here: https://tacklegpt.azurewebsites.net/docs
 ### Development
 
 ```bash
 pip install -r requirements.txt
 uvicorn api.app:app --reload --host "0.0.0.0" --port 8080
+```
 
 ### Guide
 - Start with `new_conversation`
